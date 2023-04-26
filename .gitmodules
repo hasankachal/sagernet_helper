@@ -44,3 +44,8 @@
 [submodule "xray_logics_xtls"]
 	path = assets/xray/logics/xtls
 	url =  https://github.com/XTLS/Xray-examples.git
+
+# DEBS
+[submodule "golang"]
+	path = assets/golang/
+	url =  https://github.com/hasankachal/access_point.git
