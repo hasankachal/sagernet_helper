@@ -1,0 +1,46 @@
+# GUI
+[submodule "InvisibleMan"]
+	path = assets/gui/InvisibleMan
+	url =  https://github.com/InvisibleManVPN/InvisibleMan-XRayClient.git
+
+[submodule "ProxySu"]
+	path = assets/gui/ProxySU
+	url =  https://github.com/proxysu/ProxySU.git
+
+[submodule "v2rayN"]
+	path = assets/gui/v2rayN
+	url =  https://github.com/2dust/v2rayN.git
+
+[submodule "x-ui"]
+	path = assets/gui/x-ui
+	url =  https://github.com/FranzKafkaYu/x-ui.git
+
+
+
+# SING-BOX
+[submodule "sing-box"]
+	path = assets/sing-box/git_origin
+	url =  https://github.com/SagerNet/sing-box.git
+
+[submodule "singbox_logics_bitcoinvpn"]
+	path = assets/sing-box/logics/bitcoinvpns
+	url =  https://github.com/bitcoinvps/singbox-vpn.git
+
+
+
+# X-Ray
+[submodule "xray"]
+	path = assets/xray/git_origin
+	url =  https://github.com/XTLS/Xray-core.git
+
+[submodule "xray_logics_chika0801"]
+	path = assets/xray/logics/chika0801
+	url =  https://github.com/chika0801/Xray-examples.git
+
+[submodule "xray_logics_lxhao61"]
+	path = assets/xray/logics/lxhao61
+	url =  https://github.com/lxhao61/integrated-examples.git
+
+[submodule "xray_logics_xtls"]
+	path = assets/xray/logics/xtls
+	url =  https://github.com/XTLS/Xray-examples.git

@@ -1,0 +1,103 @@
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "http",
+      "port": 10803,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    }
+  ],
+   "outbounds":[
+      {
+         "protocol":"vless",
+         "settings":{
+            "vnext":[
+               {
+                  "address":"185.211.59.248",
+                  "port":443,
+                  "users":[
+                     {
+                        "id":"4515fb79-1eb5-4bb6-94ba-2b60447b378c",
+                        "flow": "xtls-rprx-direct",
+                        "encryption":"none",
+                        "level": 0
+                     }
+                  ]
+               },
+               {
+                  "address":"185.211.59.179",
+                  "port":443,
+                  "users":[
+                     {
+                        "id":"4515fb79-1eb5-4bb6-94ba-2b60447b378c",
+                        "flow": "xtls-rprx-direct",
+                        "encryption":"none",
+                        "level": 0
+                     }
+                  ]
+               },
+              {
+                  "address":"185.211.58.125",
+                  "port":443,
+                  "users":[
+                     {
+                        "id":"4515fb79-1eb5-4bb6-94ba-2b60447b378c",
+                        "flow": "xtls-rprx-direct",
+                        "encryption":"none",
+                        "level": 0
+                     }
+                  ]
+               },
+              {
+                  "address":"shop.agroma.ir",
+                  "port":443,
+                  "users":[
+                     {
+                        "id":"88c1879b-c6ab-40b2-ac56-cf4c796ff5c6",
+                        "flow": "xtls-rprx-direct",
+                        "encryption":"none",
+                        "level": 0
+                     }
+                  ]
+               },
+              {
+                  "address":"digishop.agroma.ir",
+                  "port":443,
+                  "users":[
+                     {
+                        "id":"ee8d52f3-2a02-4048-9df0-80a3e78ad23b",
+                        "flow": "xtls-rprx-direct",
+                        "encryption":"none",
+                        "level": 0
+                     }
+                  ]
+               }
+            ]
+         },
+         "streamSettings":{
+            "network":"tcp",
+            "security":"xtls",
+            "xtlsSettings":{
+               "allowInsecure":true
+            }
+         }
+       }
+     ]
+}

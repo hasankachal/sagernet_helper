@@ -1,0 +1,218 @@
+{
+  "inbounds": [
+    {
+      "tag": "in-1",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2080,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-2",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2081,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-3",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2082,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-4",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2083,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-5",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2084,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-6",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2085,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-7",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2086,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    },
+    {
+      "tag": "in-8",
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 2087,
+      "users": [
+        {
+          "username": "proxyman",
+          "password": "Proxyisawesome1"
+        }
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy-1",
+      "type": "shadowsocks",
+      "server": "188.121.106.10",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-2",
+      "type": "shadowsocks",
+      "server": "188.121.104.65",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-3",
+      "type": "shadowsocks",
+      "server": "188.121.106.72",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-4",
+      "type": "shadowsocks",
+      "server": "188.121.107.92",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-5",
+      "type": "shadowsocks",
+      "server": "188.121.107.8",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-6",
+      "type": "shadowsocks",
+      "server": "188.121.105.110",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-7",
+      "type": "shadowsocks",
+      "server": "37.32.20.252",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    },
+    {
+      "tag": "proxy-8",
+      "type": "shadowsocks",
+      "server": "37.32.20.86",
+      "server_port": 443,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "aXJhbiBpbnRlcm5ldCBoYXMgZnVja2VkIHVzIGFsbCE="
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "inbound": [
+          "in-1"
+        ],
+        "outbound": "proxy-1"
+      },
+      {
+        "inbound": [
+          "in-2"
+        ],
+        "outbound": "proxy-2"
+      },
+      {
+        "inbound": [
+          "in-3"
+        ],
+        "outbound": "proxy-3"
+      },
+      {
+        "inbound": [
+          "in-4"
+        ],
+        "outbound": "proxy-4"
+      },
+      {
+        "inbound": [
+          "in-5"
+        ],
+        "outbound": "proxy-5"
+      },
+      {
+        "inbound": [
+          "in-6"
+        ],
+        "outbound": "proxy-6"
+      },
+      {
+        "inbound": [
+          "in-7"
+        ],
+        "outbound": "proxy-7"
+      },
+      {
+        "inbound": [
+          "in-8"
+        ],
+        "outbound": "proxy-8"
+      }
+    ]
+  }
+}

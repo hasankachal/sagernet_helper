@@ -1,0 +1,111 @@
+{
+    "log": {
+      "level": "error"
+    },
+    "route": {
+        "rules": [
+          {
+             "inbound": ["mamir-in"],
+             "outbound": "mamir-out"
+          },
+          {
+             "inbound": ["ali-in-2"],
+             "outbound": "amin-ss-out-2"
+          },
+          {
+             "inbound": ["amin-in-2"],
+             "outbound": "amin-ss-out-3"
+          }
+      ]
+    },
+    "inbounds": [
+      {
+        "type": "shadowsocks",
+        "tag": "mamir-in",
+        "listen": "::",
+        "listen_port": 448,
+        "method": "2022-blake3-aes-128-gcm",
+        "password": "8JCsPssfgS8tiRwiMlhARg=="
+      },
+      {
+        "type": "vmess",
+        "tag": "ali-in-2",
+        "listen": "::",
+        "listen_port": 445,
+        "users": [
+          {
+            "name": "sekai",
+            "uuid": "bf000d23-0752-40b4-affe-68f7707a9661",
+            "alterId": 0
+          }
+        ]
+       },
+      {
+        "type": "shadowsocks",
+        "tag": "amin-in-2",
+        "listen": "::",
+        "listen_port": 446,
+        "method": "2022-blake3-aes-128-gcm",
+        "password": "8JCsPssfgS8tiRwiMlhARg=="
+      }
+    ],
+      "outbounds": [
+     {
+       "type": "socks",
+       "tag": "mamir-out",
+       "server": "127.0.0.1",
+       "server_port": 8089,
+       "version": "5",
+       "network": "tcp",
+       "udp_over_tcp": true
+     },
+     {
+       "type": "shadowsocks",
+       "tag": "amin-ss-out-2",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "8JCsPssfgS8tiRwiMlhARg==",
+       "detour": "amin-stls-out-2",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 32,
+         "min_streams": 1
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "amin-stls-out-2",
+       "server": "91.107.240.250",
+       "server_port": 443,
+       "version": 2,
+       "password": "fuck you till the daylight",
+       "tls": {
+         "enabled": true,
+         "server_name": "google.com"
+       }
+     },
+     {
+       "type": "shadowsocks",
+       "tag": "amin-ss-out-3",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "8JCsPssfgS8tiRwiMlhARg==",
+       "detour": "amin-stls-out-3",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 32,
+         "min_streams": 1
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "amin-stls-out-3",
+       "server": "65.109.208.59",
+       "server_port": 443,
+       "version": 2,
+       "password": "fuck you till the daylight",
+       "tls": {
+         "enabled": true,
+         "server_name": "google.com"
+       }
+     }
+   ]
+  }

@@ -1,0 +1,1 @@
+docker run --name singbox-mesh singbox:mesh run -c /usr/local/etc/sing-box/config.json
