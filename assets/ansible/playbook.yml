@@ -1,0 +1,73 @@
+  - name: Playbook
+    hosts: webservers
+    remote_user: ubuntu
+    become: yes
+    become_user: root
+    tasks:
+      - name: copy singbox executable to the server
+        ansible.builtin.copy:
+          src: ./assets/sing-box
+          dest: /usr/local/bin/sing-box
+          owner: root
+          group: root
+          mode: '0775'
+          force: no
+
+      - name: Create config directory
+        file:
+          path: /usr/local/etc/sing-box/
+          state: directory
+          owner: root
+          group: root
+          mode: '0775'
+          recurse: yes
+          force: no
+      
+      - name: Create Library directory
+        file:
+          path: /var/lib/sing-box
+          state: directory
+          owner: root
+          group: root
+          mode: '0775'
+          recurse: yes
+          force: no
+
+      - name: copy singbox config file to the server
+        ansible.builtin.copy:
+          src: ./assets/server_config.json
+          dest: /usr/local/etc/sing-box/config.json
+          owner: root
+          group: root
+          mode: '0775'
+          force: no
+
+      - name: copy singbox service file to the server
+        ansible.builtin.copy:
+          src: ./assets/sing-box.service
+          dest: /etc/systemd/system/sing-box.service
+          owner: root
+          group: root
+          mode: '0775'
+          force: no
+
+      - name: Reload systemd
+        ansible.builtin.systemd:
+          daemon_reload: yes
+
+      - name: Start sing-box
+        ansible.builtin.systemd:
+          name: sing-box.service
+          state: started
+
+      - name: Enable sing-box
+        ansible.builtin.systemd:
+          name: sing-box.service
+          state: started
+          enabled: yes
+        
+      - name: Allow all access to tcp port 80
+        community.general.ufw:
+          rule: allow
+          port: '445'
+          proto: tcp

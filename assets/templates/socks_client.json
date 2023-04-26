@@ -1,0 +1,49 @@
+{
+  "log": {
+    "level": "debug"
+  },
+  "route":{
+    "rules" : [
+      {
+      "inbound": ["http-in"],
+       "outbound": "http-out"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "http-in",
+      "listen": "::",
+      "listen_port": 5051,
+      "users": [
+        {
+          "username": "admin",
+          "password": "admin"
+        }
+      ],
+      "tls": {},
+      "set_system_proxy": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "shadowsocks",
+      "tag": "http2-out",
+      "server": "37.32.7.123",
+      "server_port": 445,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "8JCsPssfgS8tiRwiMlhARg=="
+    },
+    {
+      "type": "socks",
+      "tag": "http-out",
+      "server": "37.32.7.123",
+      "server_port": 445,
+      "username": "proxyman",
+      "password": "Proxyisawesome1",
+      "network": "tcp",
+      "udp_over_tcp": false
+    }
+  ]
+}
